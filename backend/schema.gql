@@ -8,11 +8,19 @@ type UserModel {
   name: String!
 }
 
+type PostModel {
+  id: Int!
+  position: String!
+  companyName: String!
+}
+
 type Query {
   refresh: UserModel!
   profile: UserModel!
   users: [UserModel!]!
   user(id: Int!): UserModel!
+  posts: [PostModel!]!
+  post(id: Int!): PostModel!
 }
 
 type Mutation {
@@ -21,6 +29,7 @@ type Mutation {
   logout: Boolean!
   createUser(createUserData: CreateUserInput!): UserModel!
   removeUser(id: Int!): Int!
+  createPost(createUserData: CreatePostInput!): PostModel!
 }
 
 input RegisterInput {
@@ -37,4 +46,9 @@ input LoginInput {
 input CreateUserInput {
   email: String!
   password: String!
+}
+
+input CreatePostInput {
+  position: String!
+  companyName: String!
 }
