@@ -4,7 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
 import { AuthModule } from './modules/auth/auth.module';
-import { BidsModule } from './modules/bids/bids.module';
+import { PostsModule } from './modules/posts/posts.module';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
@@ -37,7 +37,7 @@ import { UsersModule } from './modules/users/users.module';
     }),
     AuthModule,
     UsersModule,
-    BidsModule,
+    PostsModule,
   ],
 })
 export class AppModule {}
