@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useRef, FC} from 'react'
-import {Link, useMediaQuery} from '@geist-ui/react'
-import {useRouter} from 'next/router'
-import {Logo as LogoIcon} from './logo'
+import React, { useState, useEffect, useRef, FC } from 'react'
+import { Link, useMediaQuery } from '@geist-ui/react'
+import { useRouter } from 'next/router'
+import { Logo as LogoIcon } from './logo'
 import {
   AuthBlock,
   LogoButton,
@@ -14,16 +14,16 @@ import {
   Logo,
   SignupButton,
 } from './index.styles'
-import {MobileMenu} from './mobile-menu'
-import {MobileMenuContent} from './mobile-menu-content'
+import { MobileMenu } from './mobile-menu'
+import { MobileMenuContent } from './mobile-menu-content'
 
 interface HeaderProps {
   contentCenter?: React.ReactNode | React.ReactElement | string
 }
 
-export const Header: FC<HeaderProps> = ({contentCenter}) => {
+export const Header: FC<HeaderProps> = ({ contentCenter }) => {
   const router = useRouter()
-  const upMD = useMediaQuery('md', {match: 'up'})
+  const upMD = useMediaQuery('md', { match: 'up' })
 
   const [isHideContent, setHideContent] = useState<boolean>(false)
   const refHeader = useRef(null)
@@ -84,15 +84,16 @@ export const Header: FC<HeaderProps> = ({contentCenter}) => {
         {upMD && (
           <ContentRight>
             <HeaderRight>
-              <span style={{boxSizing: 'border-box'}}>
+              <span style={{ boxSizing: 'border-box' }}>
                 <AuthBlock>
                   <Link href='/login'>Login</Link>
-                  <span style={{marginLeft: '24px'}}>
+                  <span style={{ marginLeft: '24px' }}>
                     <SignupButton
                       auto
                       scale={0.7}
                       type='secondary'
-                      onClick={handleClickSignUp}>
+                      onClick={handleClickSignUp}
+                    >
                       Sign Up
                     </SignupButton>
                   </span>
