@@ -1,0 +1,12 @@
+.next
+src/generated
+.babelrc
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc.js
+codegen.yml
+next.config.js
+tsconfig.json
+README.md
+yarn.lock

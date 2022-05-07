@@ -1,5 +1,5 @@
-import { Button } from "@geist-ui/react"
-import { styled } from "src/core/styled"
+import { Button } from '@geist-ui/react'
+import { styled } from 'src/core/styled'
 
 export const HeaderWrapper = styled.div`
   --header-height: 64px;
@@ -55,7 +55,7 @@ export const LogoButton = styled(Button)`
     padding: 0;
 
     .text {
-        display: flex;
+      display: flex;
     }
   }
 `
@@ -88,9 +88,7 @@ export const AuthBlock = styled.div`
 `
 
 export const SignupButton = styled(Button)`
- &&& {
+  &&& {
     font-size: 14px;
- }
- 
+  }
 `
-

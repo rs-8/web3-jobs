@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {styled, css} from 'src/core/styled'
+import React, { FC } from 'react'
+import { styled, css } from 'src/core/styled'
 
 const MenuIndicator = styled.button`
   width: 24px;
@@ -16,7 +16,7 @@ const MenuIndicator = styled.button`
   -webkit-touch-callout: none;
 `
 
-const MenuToggleWrap = styled.div<{isOpen: boolean}>`
+const MenuToggleWrap = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,12 +31,12 @@ const MenuToggleWrap = styled.div<{isOpen: boolean}>`
     display: block;
     height: 1px;
     width: 22px;
-    background-color: ${({theme}) => theme.palette.foreground};
+    background-color: ${({ theme }) => theme.palette.foreground};
     transition: transform 0.15s ease;
   }
 
   &::before {
-    ${({isOpen}) =>
+    ${({ isOpen }) =>
       isOpen
         ? css`
             transform: translateY(1px) rotate(45deg);
@@ -46,7 +46,7 @@ const MenuToggleWrap = styled.div<{isOpen: boolean}>`
           `};
   }
   &::after {
-    ${({isOpen}) =>
+    ${({ isOpen }) =>
       isOpen
         ? css`
             transform: translateY(0) rotate(-45deg);
@@ -62,7 +62,7 @@ interface MobileMenuProps {
   onToggle: () => void
 }
 
-export const MobileMenu: FC<MobileMenuProps> = ({isOpen, onToggle}) => {
+export const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onToggle }) => {
   return (
     <MenuIndicator onClick={onToggle}>
       <MenuToggleWrap isOpen={isOpen} />

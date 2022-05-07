@@ -1,4 +1,4 @@
-import {useGetUsersQuery} from 'src/generated/graphql'
+import { useGetUsersQuery } from 'src/generated/graphql'
 import DefaultLayout from 'src/layouts/default'
 import mapDataToViewExample from 'src/presentation/mappers/mapDataToViewExample'
 
@@ -18,7 +18,7 @@ const testData = [
 const newTestData = testData.map(mapDataToViewExample)
 
 const IndexPage = () => {
-  const {loading, data, error} = useGetUsersQuery()
+  const { loading, data, error } = useGetUsersQuery()
 
   if (loading) return 'Loading...'
   if (error) return `Error! ${error.message}`

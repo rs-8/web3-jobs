@@ -1,4 +1,4 @@
-import {GeistUIThemes} from '@geist-ui/react'
+import { GeistUIThemes } from '@geist-ui/react'
 import baseStyled, {
   ThemedCssFunction,
   ThemedStyledInterface,

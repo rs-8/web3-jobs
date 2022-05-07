@@ -1,11 +1,11 @@
-import React, {FC} from 'react'
-import {Page} from '@geist-ui/react'
+import React, { FC } from 'react'
+import { Page } from '@geist-ui/react'
 import styled from 'styled-components'
-import {Header} from 'src/components/header'
+import { Header } from 'src/components/header'
 
 const PageWrapper = styled.div``
 
-const DefaultLayout: FC = ({children}) => {
+const DefaultLayout: FC = ({ children }) => {
   return (
     <PageWrapper>
       <Header />

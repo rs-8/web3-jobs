@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {Button} from '@geist-ui/react'
+import React, { FC } from 'react'
+import { Button } from '@geist-ui/react'
 import {
   MobileMenuButtonItem,
   MobileMenuButtons,

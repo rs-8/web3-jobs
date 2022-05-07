@@ -1,4 +1,4 @@
-import {Example} from 'src/domain/models/Example'
+import { Example } from 'src/domain/models/Example'
 import ViewExampleModel from 'src/presentation/models/ViewExample'
 
 const mapDataToViewExample = (data: Example): ViewExampleModel => ({

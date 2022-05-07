@@ -1,10 +1,10 @@
 import React from 'react'
-import {Grid, Text, Input, Button} from '@geist-ui/react'
+import { Grid, Text, Input, Button } from '@geist-ui/react'
 import DefaultLayout from 'src/layouts/default'
-import {Controller, SubmitHandler, useForm} from 'react-hook-form'
-import {styled} from 'src/core/styled'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { styled } from 'src/core/styled'
 import * as yup from 'yup'
-import {yupResolver} from '@hookform/resolvers/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 const HeadlineWrapper = styled.div`
   max-width: 648px;
@@ -43,7 +43,7 @@ const SignupPage = () => {
     handleSubmit,
     watch,
     control,
-    formState: {errors},
+    formState: { errors },
     clearErrors,
   } = useForm<SignupFormValues>({
     resolver: yupResolver(SignupFormSchema),
@@ -75,7 +75,7 @@ const SignupPage = () => {
                       <Controller
                         name='email'
                         control={control}
-                        render={({field}) => (
+                        render={({ field }) => (
                           <>
                             <Input
                               width={'100%'}
@@ -86,7 +86,8 @@ const SignupPage = () => {
                               onChange={(e) => {
                                 clearErrors('email')
                                 field.onChange(e)
-                              }}>
+                              }}
+                            >
                               <Text span font='14px' b>
                                 Email *
                               </Text>
@@ -104,7 +105,7 @@ const SignupPage = () => {
                       <Controller
                         name='password'
                         control={control}
-                        render={({field}) => (
+                        render={({ field }) => (
                           <>
                             <Input
                               width={'100%'}
@@ -114,7 +115,8 @@ const SignupPage = () => {
                               onChange={(e) => {
                                 clearErrors('password')
                                 field.onChange(e)
-                              }}>
+                              }}
+                            >
                               <Text span font='14px' b>
                                 Password *
                               </Text>
@@ -132,7 +134,7 @@ const SignupPage = () => {
                       <Controller
                         name='confirmPassword'
                         control={control}
-                        render={({field}) => (
+                        render={({ field }) => (
                           <>
                             <Input
                               width={'100%'}
@@ -142,7 +144,8 @@ const SignupPage = () => {
                               onChange={(e) => {
                                 clearErrors('confirmPassword')
                                 field.onChange(e)
-                              }}>
+                              }}
+                            >
                               <Text span font='14px' b>
                                 Confirm password *
                               </Text>
@@ -161,7 +164,8 @@ const SignupPage = () => {
                         type='success-light'
                         width='100%'
                         scale={1.35}
-                        htmlType='submit'>
+                        htmlType='submit'
+                      >
                         Sign up
                       </Button>
                     </Grid>
