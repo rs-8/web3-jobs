@@ -17,17 +17,27 @@ export class PostsService {
     return post;
   }
 
-  findAll(): Promise<PostEntity[]> {
-    return this.postsRepository.find();
+  async findAll(offset?: number, limit?: number) {
+    const [data, count] = await this.postsRepository.findAndCount({
+      order: {
+        id: 'ASC',
+      },
+      skip: offset,
+      take: limit,
+    });
+    return {
+      data,
+      count,
+    };
   }
 
   async findOne(id: string | number): Promise<PostEntity> {
-    const user = await this.postsRepository.findOne(id);
-    if (!user)
+    const post = await this.postsRepository.findOne(id);
+    if (!post)
       throw new HttpException(
         'Post with this id does not exist',
         HttpStatus.NOT_FOUND,
       );
-    return user;
+    return post;
   }
 }

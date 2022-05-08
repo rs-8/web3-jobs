@@ -14,12 +14,17 @@ type PostModel {
   companyName: String!
 }
 
+type PaginatedPosts {
+  data: [PostModel!]!
+  count: Int!
+}
+
 type Query {
   refresh: UserModel!
   profile: UserModel!
   users: [UserModel!]!
   user(id: Int!): UserModel!
-  posts: [PostModel!]!
+  posts(offset: Int!, limit: Int!): PaginatedPosts!
   post(id: Int!): PostModel!
 }
 

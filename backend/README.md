@@ -1,4 +1,4 @@
-# Wirate
+# WEB3 JOBS
 
 ## Running the app
 
