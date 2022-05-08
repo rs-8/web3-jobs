@@ -1,4 +1,6 @@
 import { Args, Mutation, Query, Resolver, Int } from '@nestjs/graphql';
+import { AllPostsArgs } from './dto/all-posts.args';
+import { PaginatedPosts } from './dto/all-posts.data';
 import { CreatePostInput } from './dto/create-post.input';
 import { PostModel } from './post.model';
 import { PostsService } from './posts.service';
@@ -14,9 +16,11 @@ export class PostsResolver {
     return this.postsService.create(createPostData);
   }
 
-  @Query(() => [PostModel], { name: 'posts' })
-  findAll(): Promise<PostModel[]> {
-    return this.postsService.findAll();
+  @Query(() => PaginatedPosts, { name: 'posts' })
+  findAll(
+    @Args() { offset, limit }: AllPostsArgs,
+  ): Promise<{ data: PostModel[]; count: number }> {
+    return this.postsService.findAll(offset, limit);
   }
 
   @Query(() => PostModel, { name: 'post' })
