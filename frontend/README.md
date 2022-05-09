@@ -1,4 +1,4 @@
-# Wirate-UI
+# WEB3 JOBS Frontend
 
 ## Getting Started
 
